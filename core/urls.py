@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from backend.views import *
 
 urlpatterns = [
     path('' , home, name='home'),
+    # Backend
+    path('backend' , backend, name='backend'),
+    
     path('create/' , create, name='create'),
     path('store/', store, name='store'),
     path('about/', about, name='about'),
