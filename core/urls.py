@@ -21,7 +21,16 @@ from home.views import *
 urlpatterns = [
     path('' , home, name='home'),
     path('create/' , create, name='create'),
-    path('about/' , about, name='about'),
-    path('contact/' , contact, name='contact'),
+    path('store/', store, name='store'),
+    path('about/', about, name='about'),
+    path('contact/', contact, name='contact'),
+    path('success/', success, name='success'),
+    path('edit/<int:student_id>/', edit, name='edit'),
+    path('update/<int:student_id>/', update, name='update'), 
+    path('delete/<int:student_id>/', delete, name='delete'),
+    
+    path('api/students/', StudentListCreate.as_view(), name='student-list-create'),
+    path('api/students/<int:pk>/', StudentRetrieveUpdateDestroy.as_view(), name='student-detail'),
+    
     path('admin/', admin.site.urls),
 ]
